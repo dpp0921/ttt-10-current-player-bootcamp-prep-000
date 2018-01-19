@@ -1,14 +1,16 @@
 def turn_count(board)
   count = 1
-  board.each do |turn|
-    count += 1
+  board.each do |token|
+    if token == "X" || token == "O"
+      count += 1
+    end
   end
+  count
 end
-def current_player(board)
-  turn_count(board)
-  if count % 2 == 0
-    current_player = "O"
+def current_player(board, token)
+  if turn_count(board) % 2 == 0
+    token = "O"
   else
-    current_player = "X"
+    token = "X"
   end
 end
