@@ -7,10 +7,6 @@ def turn_count(board)
   end
   count
 end
-def current_player(board, token)
-  if turn_count(board) % 2 == 0
-    token = "O"
-  else
-    token = "X"
-  end
+def current_player(board)
+  turn_count(board) % 2 == 0 ? "X" : "O"
 end
